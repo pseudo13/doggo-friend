@@ -7,12 +7,8 @@ const store = useStore<DoggoState>();
 const router = useRouter();
 const doggoList = computed(() => store.getters.doggoList);
 const gotoDetails = (id) => {
-  router.push(`doggo/${id}`);
+  router.push(`doggo-details/${id}`);
 };
-onMounted(() => {
-  console.log("abc");
-  store.dispatch(Action.GET_DOGGO_LIST);
-});
 </script>
 <template>
   <div class="container">

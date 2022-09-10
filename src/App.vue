@@ -1,12 +1,21 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Your full list of doggos</router-link> |
+    <router-link to="/random">Random doggos</router-link>
   </nav>
+  <doggo-filter></doggo-filter>
   <router-view />
 </template>
-<script lang="ts">
-export default {};
+<script lang="ts" setup>
+import { onMounted } from "vue";
+import { useStore } from "vuex";
+import { Action, DoggoState } from "./store";
+import DoggoFilter from "./components/DoggoFilter.vue";
+const store = useStore<DoggoState>();
+onMounted(() => {
+  console.log("abc");
+  store.dispatch(Action.GET_DOGGO_LIST);
+});
 </script>
 
 <style>
