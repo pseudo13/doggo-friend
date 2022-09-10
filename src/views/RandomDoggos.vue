@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Action, DoggoState } from "@/store";
-import { computed, on, onMounted } from "vue";
+import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore<DoggoState>();

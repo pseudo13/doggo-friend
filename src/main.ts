@@ -7,10 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 export function apiInterceptor() {
     axios.interceptors.request.use((request) => {
-        const apiKey =
-            "live_lUHCNWGnVxbeYcbG5CpWzgVoIMS6cUxLqxlFWHOh4yP9dCfAyCiglSihaPUOJ0sn";
         if (request && request.headers) {
-            request.headers["x-api-key"] = `${apiKey}`;
+            request.headers["x-api-key"] = `${process.env.VUE_APP_APIKEY}`;
         }
 
         return request;

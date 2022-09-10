@@ -22,9 +22,9 @@ const gobackToList = () => router.push("/");
       <h5>My name is: {{ details.name }}</h5>
       <p v-if="details.alt_names">My other names: {{ details.alt_names }}</p>
       <p>
-        <span v-if="details.bred_for">Bread: {{ details.bred_for }} -</span>
+        <span v-if="details.bred_for">Breed: {{ details.bred_for }} -</span>
         <span v-if="details.breed_group"
-          >Bread group: {{ details.breed_group }}</span
+          >Breed group: {{ details.breed_group }}</span
         >
       </p>
       <p>Gonna live with you: {{ details.life_span }} years long.</p>
